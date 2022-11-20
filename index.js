@@ -1,6 +1,6 @@
 const webdriver = require('selenium-webdriver');
 const {By, until} = webdriver;
-const { assert } = require('console');
+const { assert } = require('chai');
 
 const capabilities = require("./capabilities.json");
 
