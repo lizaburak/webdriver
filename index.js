@@ -6,7 +6,7 @@ const capabilities = require("./capabilities.json");
 
 const bstackURL = 'http://bsuser_qswnej:xsMrKvsNSzP7SsTw5D52@hub-cloud.browserstack.com/wd/hub';
 const selectItemURL = 'https://znwr.ru/product/719-31-184/coat-mentor/';
-const acceptCookiesLocator = `//*[@data-country-code='BY']`;
+const selectCountryLocator = `//*[@data-country-code='BY']`;
 const addBagButtonId = 'product__add-cart-btn';
 const addTextPopupLocator = `//*[@class='product__modal-cart-text-1']`;
 const popupButtonCloseId = 'product__modal-cart-close';
@@ -28,7 +28,7 @@ describe("Adding item to the bag test", () => {
 
         await driver.get(selectItemURL);
 
-        await driver.findElement(By.xpath(acceptCookiesLocator)).click();
+        await driver.findElement(By.xpath(selectCountryLocator)).click();
 
         await driver.wait(until.elementLocated(By.id(addBagButtonId)), 3000);
         await driver.findElement(By.id(addBagButtonId)).click();
